@@ -1,10 +1,10 @@
-const mysql = require('mysql2');
+import mysql from 'mysql2';
 
 const connection = mysql.createConnection({
   host: 'localhost',
   user: 'root',
   password: 'root',
-  database: 'shopping_platform2',
+  database: 'shopping_platform',
 });
 
 connection.connect((err) => {
@@ -15,4 +15,4 @@ connection.connect((err) => {
   }
 });
 
-module.exports = connection;
+export default connection;
