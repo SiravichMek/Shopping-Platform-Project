@@ -45,6 +45,7 @@ const getUserID = async (Username, Password) => {
   }
 };
 
+//get ID of the last row of cart
 const getLastRowInCarts = async () => {
   const db = await createConnection();
 
@@ -64,11 +65,33 @@ const getLastRowInCarts = async () => {
     return null;
   }
 };
-getLastRowInCarts();
+
+//get ID of the last row of shop
+const getLastRowInShops = async () => {
+  const db = await createConnection();
+
+  try {
+    // Get the values of the last row in the 'carts' table
+    const query = 'SELECT ShopID FROM shops ORDER BY ShopID DESC LIMIT 1';
+    const lastRowID = await db.query(query);
+
+    if (lastRowID) {
+      return lastRowID[0][0].ShopID;
+    } else {
+      console.error('No rows found in the shops table.');
+      return null;
+    }
+  } catch (err) {
+    console.error('Error fetching the last row from the shops table:', err);
+    return null;
+  }
+};
+
 
 export {
   getInfoLogin,
   getInfoID,
   getUserID,
-  getLastRowInCarts
+  getLastRowInCarts,
+  getLastRowInShops
 };
