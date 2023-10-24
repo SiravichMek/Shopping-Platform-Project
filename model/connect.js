@@ -6,9 +6,9 @@ const createConnection = async () => {
       host: 'localhost',
       user: 'root',
       password: 'root',
-      database: 'shopping_platform2',
+      database: 'shopping_platform',
     });
-    console.log('Connected to MySQL');
+    //console.log('Connected to MySQL');
     return connection;
   } catch (err) {
     console.error('Error connecting to MySQL:', err);
