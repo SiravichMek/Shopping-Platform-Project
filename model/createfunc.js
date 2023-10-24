@@ -1,17 +1,20 @@
-import db from './connect.js';
+import createConnection from './connect.js';
 
-const createUser = (Data) => {
-    const query = 'INSERT INTO users (UserID, Name, Username, Password, Tel, Address) VALUES (?, ?, ?, ?, ?, ?)';
-    const values = [Data.UserID, Data.Name, Data.Username, Data.Password, Data.Tel, Data.Address];
-  
-    db.query(query, values, (err, results) => {
-      if (err) {
-        return console.error(err);
-      }
-      console.log('Insert Complete.');
-    });
-  };
+const createUser = async (Name, Username, Password, Tel, Address, Image) => {
+  const db = await createConnection(); 
+  const query = 'INSERT INTO users (Name, Username, Password, Tel, Address, Image) VALUES (?, ?, ?, ?, ?, ?)';
+  const values = [Name, Username, Password, Tel, Address, Image];
 
-  export {
-    createUser
-  };
+  try {
+    const results = await db.query(query, values);
+    console.log('Insert Complete.');
+    return results;
+  } catch (err) {
+    console.error('Error:', err);
+  }
+};
+
+
+export {
+  createUser
+};
