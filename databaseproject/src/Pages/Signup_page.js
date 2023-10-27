@@ -1,6 +1,6 @@
 import React from 'react';
 
-import Signupform_coms from'../Components/Signupform';
+import Signupform_coms from'../Components/Signupform.js';
 function Signup_page(){
   return (
     <>

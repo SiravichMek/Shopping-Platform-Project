@@ -1,27 +1,43 @@
 import React, { useState } from 'react';
-import { createUser } from '../APIs/test';
+import axios from 'axios';
 
-const SignupForm = () =>  {
+const apiUrl = 'http://localhost:3000/api/createUser'; // Replace with your API URL
+
+const SignupForm = () => {
+  const [name, setName] = useState('');
   const [user, setUser] = useState('');
   const [password, setPassword] = useState('');
-  const [confirmpassword, setConfirmPassword] = useState('');
+  const [confirmPassword, setConfirmPassword] = useState('');
   const [address, setAddress] = useState('');
   const [telephone, setTelephone] = useState('');
-  const [name, setName] = useState('');
+
+  const createUser = async () => {
+    try {
+      const response = await axios.post(apiUrl, {
+        Name: name,
+        Username: user,
+        Password: password,
+        confirmpassword: confirmPassword,
+        Address: address,
+        Tel: telephone,
+      });
+      console.log('API Response:', response.data);
+      // handle success or redirection here
+    } catch (error) {
+      console.error('API Error:', error.response.data);
+      // handle error here
+    }
+  };
 
   const handleSubmit = (event) => {
     event.preventDefault();
-    if (createUser  (
-      name,user, password,  telephone,address)) 
-    {
-      window.location.href = '/login';
-    }
+    createUser();
   };
 
   return (
     <div className="nav">
       <form onSubmit={handleSubmit}>
-      <label htmlFor="name">Name</label>
+        <label htmlFor="name">Name</label>
         <br />
         <input
           type="text"
@@ -57,7 +73,7 @@ const SignupForm = () =>  {
           type="password"
           id="confirmpassword"
           name="confirmpassword"
-          value={confirmpassword}
+          value={confirmPassword}
           onChange={(e) => setConfirmPassword(e.target.value)}
         />
         <br />

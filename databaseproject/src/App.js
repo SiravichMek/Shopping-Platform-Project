@@ -3,9 +3,9 @@ import './Styles/index.css';
 import {Route, Routes, Navigate} from 'react-router-dom';
 import './Styles/App.css';
 // Below This is import page.
-import Login from "./Pages/Login_page";
-import Main from "./Pages/Main_page";
-import Signup from "./Pages/Signup_page";
+import Login from "./Pages/Login_page.js";
+import Main from "./Pages/Main_page.js";
+import Signup from "./Pages/Signup_page.js";
 
 function App() {
   return (

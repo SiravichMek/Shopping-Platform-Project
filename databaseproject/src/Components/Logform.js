@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 
-import { handleLogin } from '../APIs/auth';
+import { handleLogin } from '../APIs/auth.js';
 
 const LoginForm = () => {
   const [user, setUser] = useState('');
