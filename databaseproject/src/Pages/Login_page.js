@@ -1,12 +1,12 @@
-import React from 'react'
-import Login_Com from '../Components/Logform.js';
+import React from 'react';
 
-function Login() {
+import Loginform_coms from'../Components/Logform';
+function Login_page(){
   return (
-   <>
-    <Login_Com/>
-   </>
+    <>
+      <Loginform_coms/>
+    </>
   )
-}
+};
 
-export default Login;
+export default Login_page;

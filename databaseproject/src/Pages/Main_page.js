@@ -1,13 +1,11 @@
 import React from 'react'
-import Navbar from '../Components/Navbar_Com.js'
-function Login() {
+
+function Main_page() {
   return (
-  <>
-    <Navbar/>
-  
-   
-  </>
+   <>
+   <h1>asdasdw</h1>
+   </>
   )
 }
 
-export default Login;
+export default Main_page;

@@ -1,8 +1,7 @@
 import React, { useState } from 'react';
+import { createUser } from '../APIs/test';
 
-import { createUser } from '../assets/test';
-
-const createUser = () =>  {
+const SignupForm = () =>  {
   const [user, setUser] = useState('');
   const [password, setPassword] = useState('');
   const [confirmpassword, setConfirmPassword] = useState('');
@@ -12,7 +11,7 @@ const createUser = () =>  {
 
   const handleSubmit = (event) => {
     event.preventDefault();
-    if (createUser(
+    if (createUser  (
       name,user, password,  telephone,address)) 
     {
       window.location.href = '/login';
