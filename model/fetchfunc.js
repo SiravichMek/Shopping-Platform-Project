@@ -8,13 +8,13 @@ const getInfoLogin = async (Username, Password) => {
 
   try {
     const results = await db.query(query, values);
-    console.log('Retrieve Complete.', results);
+    console.log('Retrieve Complete.', results[0]);
     return results[0];
   } catch (err) {
     console.error('Error:', err);
   }
 };
-
+getInfoLogin("xxx","xxx")
 // get all data from userID
 const getInfoID = async (UserID) => {
   const db = await createConnection();
@@ -87,11 +87,26 @@ const getLastRowInShops = async () => {
   }
 };
 
+//get ShopID from Username and Password
+const getShopID = async (Username,Password) => {
+  const db = await createConnection();
+
+  try {
+    const query = 'SELECT ShopID FROM users WHERE Username = ? AND Password = ?';
+    const value =  [Username, Password];
+    const shopid = await db.query(query,value);
+    return shopid[0][0].ShopID;
+  } catch (err) {
+    console.error('Error fetching the shopID:', err);
+    return null;
+  }
+};
 
 export {
   getInfoLogin,
   getInfoID,
   getUserID,
   getLastRowInCarts,
-  getLastRowInShops
+  getLastRowInShops,
+  getShopID
 };

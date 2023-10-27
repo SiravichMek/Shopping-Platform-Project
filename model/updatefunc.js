@@ -28,7 +28,25 @@ const updateUserShop = async(UserID,ShopID) =>{
   
 }
 
+
+//Edit shop
+import { getShopID } from './fetchfunc.js';
+const editShop = async(Shopname,Description,Image) =>{
+  const shopid = await getShopID();
+  const db = await createConnection(); 
+  const query = "UPDATE shops SET Shopname = ?, Description = ?, Image= ? WHERE ShopID = ? ";
+  const values = [Shopname,Description,Image,shopid];
+  try {
+    const results = await db.query(query, values);
+    console.log('Update Shop Complete.');
+  } catch (err) {
+    console.error('Error:', err);
+  }
+
+}
+
 export {
     updateUserCart,
-    updateUserShop
+    updateUserShop,
+    editShop
   };
