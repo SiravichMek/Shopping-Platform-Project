@@ -11,16 +11,17 @@ const SignupForm = () => {
   const [address, setAddress] = useState('');
   const [telephone, setTelephone] = useState('');
 
+const data_body = {
+  Name: name,
+  Username: user,
+  Password: password,
+  confirmpassword: confirmPassword,
+  Address: address,
+  Tel: telephone,
+}
   const createUser = async () => {
     try {
-      const response = await axios.post(apiUrl, {
-        Name: name,
-        Username: user,
-        Password: password,
-        confirmpassword: confirmPassword,
-        Address: address,
-        Tel: telephone,
-      });
+      const response = await axios.post(apiUrl, data_body);
       console.log('API Response:', response.data);
       // handle success or redirection here
     } catch (error) {

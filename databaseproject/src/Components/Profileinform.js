@@ -5,13 +5,13 @@ const apiUrl = 'http://localhost:3001/api/profile';
 
 const Profileform = () => {
   const [responseData, setResponseData] = useState([]);
-  const data = {
+  const data_body = {
     Username: sessionStorage.getItem('Username'),
     Password: sessionStorage.getItem('Password'),
 };
   const getUserData = async () => {
     try {
-      const response = await axios.post(apiUrl, data);
+      const response = await axios.post(apiUrl, data_body);
       setResponseData(response.data.data);
     } catch (error) {
       // Handle error
@@ -21,7 +21,7 @@ const Profileform = () => {
 
   useEffect(() => {
     getUserData();
-  }, []); // empty dependency array ensures the effect runs only once
+  }, []); 
 
   return (
     <>

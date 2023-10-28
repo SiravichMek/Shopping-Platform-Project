@@ -6,13 +6,13 @@ const apiUrl = 'http://localhost:3001/api/login';
 const LoginForm = () => {
   const [user, setUser] = useState('');
   const [password, setPassword] = useState('');
-  
-  const login = async () => {
-    try {
-      const response = await axios.post(apiUrl, {
+  const data_body = {
         Username: user,
         Password: password,
-      });
+  }
+  const login = async () => {
+    try {
+      const response = await axios.post(apiUrl, data_body);
       console.log('API Response:', response.data);
       // handle success or redirection here
     } catch (error) {
@@ -23,7 +23,9 @@ const LoginForm = () => {
 
   const handleSubmit = (event) => {
     event.preventDefault();
+    
     if (user !== '' && password !== '') {
+      login();
       sessionStorage.setItem('Username', user);
       sessionStorage.setItem('Password', password);
       alert("Login Suscess");
