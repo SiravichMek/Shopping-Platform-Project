@@ -10,7 +10,7 @@ router_profile.post('/api/profile', async (req, res) => {
   const values = [Username, Password];
   const db = await createConnection();
   
-  console.log(req.body)
+  
     try {
       const results = await db.query(query, values);
       if(results[0].length==0){
@@ -18,8 +18,9 @@ router_profile.post('/api/profile', async (req, res) => {
       }
       else{
         
-      res.status(200).json({ data: results });
-      console.log(results)}
+      res.status(200).json({ data: results[0] });
+      // console.log(results)
+    }
     } catch (error) {
       console.error('Database Error:', error);
       res.status(500).json({ error: 'Occur some conflict with retrieving process' });
@@ -27,4 +28,21 @@ router_profile.post('/api/profile', async (req, res) => {
    
 });
 
+
+// const response = {
+//   "data": [
+//       {
+//           "UserID": 32,
+//           "Name": "Chawanakon",
+//           "Username": "chaonai1",
+//           "Password": "promsila",
+//           "Tel": "asdasd",
+//           "CartID": 1,
+//           "ShopID": 1,
+//           "Address": "asdasd",
+//           "Image": null
+//       }
+//   ]
+// }
+// console.log(response.data[0].UserID)
 export default router_profile;
