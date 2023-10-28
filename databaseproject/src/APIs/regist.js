@@ -1,13 +1,9 @@
 import express from 'express';
-import bodyParser from 'body-parser';
 import createConnection from './connect.js';
-import cors from 'cors';
 
-const app = express();
-app.use(bodyParser.json());
-app.use(cors());
+const router_regist = express.Router();
 
-app.post('/api/createUser', async (req, res) => {
+router_regist.post('/api/createUser', async (req, res) => {
   const { Name, Username, Password, confirmpassword, Address, Tel } = req.body;
 
   if (Password !== confirmpassword) {
@@ -159,7 +155,4 @@ const getLastRowInShops = async () => {
   }
 };
 
-const PORT =  3001;
-app.listen(PORT, () => {
-  console.log(`Server is running on port ${PORT}`);
-});
+export default router_regist;
