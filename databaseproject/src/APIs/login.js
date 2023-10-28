@@ -16,7 +16,7 @@ router_login.post('/api/login', async (req, res) => {
         res.status(500).json({ error: 'Not have related user ID' })
       }
       else{
-      res.status(200).json({ message: 'Login complete' });
+      res.status(200).json({ message: 'Login complete',data: results });
       console.log(results)}
     } catch (error) {
       console.error('Database Error:', error);
