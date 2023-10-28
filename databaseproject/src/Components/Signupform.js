@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import axios from 'axios';
 
-const apiUrl = 'http://localhost:3000/api/createUser'; // Replace with your API URL
+const apiUrl = 'http://localhost:3001/api/createUser'; // Replace with your API URL
 
 const SignupForm = () => {
   const [name, setName] = useState('');
