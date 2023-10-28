@@ -1,14 +1,32 @@
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
+import axios from 'axios';
 
-import { handleLogin } from '../APIs/auth.js';
+const apiUrl = 'http://localhost:3001/api/login'; 
 
 const LoginForm = () => {
   const [user, setUser] = useState('');
   const [password, setPassword] = useState('');
+  
+  const login = async () => {
+    try {
+      const response = await axios.post(apiUrl, {
+        Username: user,
+        Password: password,
+      });
+      console.log('API Response:', response.data);
+      // handle success or redirection here
+    } catch (error) {
+      console.error('API Error:', error.response.data);
+      // handle error here
+    }
+  };
 
   const handleSubmit = (event) => {
     event.preventDefault();
-    if (handleLogin(user, password)) {
+    if (user !== '' && password !== '') {
+      sessionStorage.setItem('Username', user);
+      sessionStorage.setItem('Password', password);
+      alert("Login Suscess");
       window.location.href = '/main';
     }
   };
