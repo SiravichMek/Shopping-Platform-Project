@@ -39,6 +39,8 @@ const LoginForm = () => {
         <br />
         <button type="submit">Submit</button>
       </form>
+      <br />
+      <a href="/signup">Signup</a>
     </div>
   );
 };

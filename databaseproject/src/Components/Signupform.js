@@ -31,7 +31,17 @@ const SignupForm = () => {
 
   const handleSubmit = (event) => {
     event.preventDefault();
-    createUser();
+    if (password !== '' && confirmPassword !== '') {
+      if (password !== confirmPassword) {
+        alert("Password does not match");
+      } else {
+        createUser(); // Call the createUser function here if all conditions are met
+        alert("Create complete");
+        // window.location.href = '/login';
+      }
+    } else {
+      alert("Please fill in all fields");
+    }
   };
 
   return (
