@@ -19,31 +19,30 @@ const data_body = {
   Address: address,
   Tel: telephone,
 }
-  const createUser = async () => {
-    try {
-      const response = await axios.post(apiUrl, data_body);
-      console.log('API Response:', response.data);
-      // handle success or redirection here
-    } catch (error) {
-      console.error('API Error:', error.response.data);
-      // handle error here
-    }
-  };
-
-  const handleSubmit = (event) => {
-    event.preventDefault();
+const createUser = async () => {
+  try {
+    const response = await axios.post(apiUrl, data_body);
+    console.log('API Response:', response.data);
     if (password !== '' && confirmPassword !== '') {
       if (password !== confirmPassword) {
         alert("Password does not match");
       } else {
-        createUser(); // Call the createUser function here if all conditions are met
         alert("Create complete");
-        // window.location.href = '/login';
+        window.location.href = '/login';
       }
-    } else {
-      alert("Please fill in all fields");
     }
-  };
+    // handle success or redirection here
+  } catch (error) {
+    console.error('API Error:', error.response.data);
+    // handle error here
+  }
+};
+
+const handleSubmit = (event) => {
+  event.preventDefault();
+  createUser();
+  
+};
 
   return (
     <div className="nav">

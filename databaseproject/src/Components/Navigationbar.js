@@ -2,7 +2,7 @@ const Navigationbar = () => {
     return(
         <>
         <div className="nav">
-            <div className="container">
+            <div className="sadas">
                 <div className="row">
                     <div className="col-md-12" >
                         <h2 style={{backgroundColor: "lightblue"}}>navigation bar</h2>

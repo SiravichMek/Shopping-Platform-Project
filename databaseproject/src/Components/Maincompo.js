@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import axios from 'axios';
-import '../Styles/card.css';
+
 
 const apiUrl = 'http://localhost:3001/api/main';
 
@@ -22,22 +22,29 @@ const Maincompo = () => {
     }, []);
 
     return (
-        <div>
+        <>
             <h2>Data from Backend:</h2>
-            {responseData.map((products) => (
-                <div key={products.ProductID}>
-                    <div className="container">
-                        <div className="card-title">
-                            <h1>{products.Name}</h1>
-                        </div>
-                        <div className="card-body">
-                            <p>{products.Description}</p>
-                            <p>{products.Cost}</p>
+            <div className="product-container">
+                
+                {responseData.map((products) => (
+                    <div key={products.ProductID} className="product-card">
+                        <div className="container">
+                                <div className="row">
+                                <div className="card-title">
+                                    <img src={products.Picture} />
+                                </div>
+
+                                <div className="card-body">
+                                    <p>Product name: {products.Name}</p>
+                                    <p>Description: {products.Description}</p>
+                                    <p>Price: {products.Cost}</p>
+                                </div>
+                            </div>
                         </div>
                     </div>
-                </div>
-            ))}
-        </div>
+                ))}
+            </div>
+        </>
     );
 };
 

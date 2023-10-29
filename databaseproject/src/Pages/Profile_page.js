@@ -5,6 +5,7 @@ function Profile_page(){
     return(
         <>
         <Profileinform/>
+        <a href="/cs">Create shop</a>
         </>
     )
 };
