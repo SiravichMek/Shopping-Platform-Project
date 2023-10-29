@@ -5,10 +5,11 @@ import createConnection from './connect.js';
 const router_main = express.Router();
 
 router_main.get('/api/main', async (req, res) => {
-  const query = 'SELECT * FROM products';
+  
   const db = await createConnection();
     
     try {
+      const query = 'SELECT * FROM products';
       const results = await db.query(query);
       res.status(200).json({ data: results[0] });
       console.log(results[0])
