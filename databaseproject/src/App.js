@@ -10,8 +10,11 @@ import Createshop from "./Pages/Createshop_page.js";
 import Profile from "./Pages/Profile_page.js";
 import Editprofile from "./Pages/Editpro.js";
 
+
+
 function App() {
   return (
+    
     <div className="App">
       <Routes>
       {/* Start page when open. */}

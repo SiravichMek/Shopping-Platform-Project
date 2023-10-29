@@ -24,17 +24,17 @@ const Maincompo = () => {
     return (
         <>
             <h2>Data from Backend:</h2>
-            <div className="product-container">
+            <div className="">
                 
                 {responseData.map((products) => (
-                    <div key={products.ProductID} className="product-card">
-                        <div className="container">
-                                <div className="row">
-                                <div className="card-title">
+                    <div key={products.ProductID} className="">
+                        <div className="">
+                                <div className="">
+                                <div className="">
                                     <img src={products.Picture} />
                                 </div>
 
-                                <div className="card-body">
+                                <div className="">
                                     <p>Product name: {products.Name}</p>
                                     <p>Description: {products.Description}</p>
                                     <p>Price: {products.Cost}</p>
