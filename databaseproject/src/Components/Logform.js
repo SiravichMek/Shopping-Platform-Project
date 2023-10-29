@@ -4,6 +4,7 @@ import axios from 'axios';
 const apiUrl = 'http://localhost:3001/api/login'; 
 
 const LoginForm = () => {
+  const [responseData, setResponseData] = useState('');
   const [user, setUser] = useState('');
   const [password, setPassword] = useState('');
   const data_body = {
@@ -13,24 +14,26 @@ const LoginForm = () => {
   const login = async () => {
     try {
       const response = await axios.post(apiUrl, data_body);
-      console.log('API Response:', response.data);
-      // handle success or redirection here
+      setResponseData(response.data.data);
+      if (user !== '' && password !== '') {
+        sessionStorage.setItem('Username', user);
+        sessionStorage.setItem('Password', password);
+        alert("Login Suscess"); 
+        window.location.href = '/main';
+       }
+      
     } catch (error) {
-      console.error('API Error:', error.response.data);
-      // handle error here
+      // Handle error
+      console.error('Error fetching data:', error);
+      alert("Fail");
     }
   };
 
   const handleSubmit = (event) => {
     event.preventDefault();
+    login();
     
-    if (user !== '' && password !== '') {
-      login();
-      sessionStorage.setItem('Username', user);
-      sessionStorage.setItem('Password', password);
-      alert("Login Suscess");
-      window.location.href = '/main';
-    }
+    
   };
 
   return (

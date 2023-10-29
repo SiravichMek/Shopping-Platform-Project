@@ -10,8 +10,8 @@ router_main.get('/api/main', async (req, res) => {
     
     try {
       const results = await db.query(query);
-      res.status(200).json({ data: results });
-      console.log(results)
+      res.status(200).json({ data: results[0] });
+      console.log(results[0])
     } catch (error) {
       console.error('Database Error:', error);
       res.status(500).json({ error: 'Occur some conflict with retrieving process' });
