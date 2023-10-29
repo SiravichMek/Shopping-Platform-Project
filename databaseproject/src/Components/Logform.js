@@ -37,9 +37,9 @@ const LoginForm = () => {
   };
 
   return (
-    <div className="nav">
+    <div className="container mx-auto">
       <form onSubmit={handleSubmit}>
-        <label htmlFor="user">User</label>
+        <label htmlFor="user" className='text-red-500'>User</label>
         <br />
         <input
           type="text"

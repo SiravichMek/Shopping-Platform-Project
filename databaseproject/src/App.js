@@ -8,6 +8,7 @@ import Main from "./Pages/Main_page.js";
 import Signup from "./Pages/Signup_page.js";
 import Createshop from "./Pages/Createshop_page.js";
 import Profile from "./Pages/Profile_page.js";
+import Editprofile from "./Pages/Editpro.js";
 
 function App() {
   return (
@@ -22,6 +23,7 @@ function App() {
       <Route path="/signup" element={<Signup />} />
       <Route path="/profile" element={<Profile/>}/>
       <Route path="/cs" element={<Createshop/>}/>
+      <Route path="/editprofile" element={<Editprofile/>}/>
       
       {/* Redirect page to 404 when url out of our url lists */}
       <Route path="/404" element={<Navigate to="/NotFoundPage" />} />
