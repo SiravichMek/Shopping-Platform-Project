@@ -7,7 +7,8 @@ function Profile_page(){
         <Profileinform/>
         <a href="/editprofile">edit profile</a>
         <br/>
-        <a href="/cs">Create shop</a>
+        <a href="/cs">Edit shop</a>
+        <br/>
         </>
     )
 };

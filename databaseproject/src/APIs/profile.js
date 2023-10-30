@@ -27,22 +27,4 @@ router_profile.post('/api/profile', async (req, res) => {
     }
    
 });
-
-
-// const response = {
-//   "data": [
-//       {
-//           "UserID": 32,
-//           "Name": "Chawanakon",
-//           "Username": "chaonai1",
-//           "Password": "promsila",
-//           "Tel": "asdasd",
-//           "CartID": 1,
-//           "ShopID": 1,
-//           "Address": "asdasd",
-//           "Image": null
-//       }
-//   ]
-// }
-// console.log(response.data[0].UserID)
 export default router_profile;
