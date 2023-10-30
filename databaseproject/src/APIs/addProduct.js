@@ -2,23 +2,21 @@
 import express from 'express';
 import createConnection from './connect.js';
 
-const router_shop = express.Router();
+const router_addProduct = express.Router();
 
-router_shop.post('/api/shop', async (req, res) => {
-    const { Username, Password, Shopname, Description } = req.body;
+router_addProduct.post('/api/addProduct', async (req, res) => {
+    const { Username, Password, Name, Description, Cost, Category } = req.body;
     const shopID = await getShopID(Username,Password);
-    const query = "UPDATE shops SET Shopname = ?, Description = ? WHERE ShopID = ? ";
-    const values = [Shopname,Description,shopID];
-  const db = await createConnection();
-  
-  console.log(req.body)
+    const query = "INSERT INTO products (Name, Description, Cost, ShopID ,Category) VALUES (?, ?, ?, ?, ?) ";
+    const values = [Name,Description,Cost,shopID,Category];
+    const db = await createConnection();
     try {
       const results = await db.query(query, values);
-      res.status(200).json({ message: "Update data for shop" });
-      console.log(results)
+      res.status(200).json({ message: "Add new product complete" });
+      
     } catch (error) {
       console.error('Database Error:', error);
-      res.status(500).json({ error: 'Occur some conflict with updating process' });
+      res.status(500).json({ error: 'Occur some conflict with adding process' });
     }
    
 });
@@ -39,4 +37,4 @@ const getShopID = async (Username,Password) => {
   };
   
 
-export default router_shop;
+export default router_addProduct;
