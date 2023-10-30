@@ -10,6 +10,7 @@ import router_shop from "./shop.js";
 import router_main from "./main.js"
 import { router_fetchProfile } from "./editProfile.js";
 import { router_updateProfile } from "./editProfile.js";
+import router_fetchShop from "./shopProfile.js";
 
 const app = express();
 app.use(bodyParser.json());
@@ -23,6 +24,7 @@ app.use(router_shop);
 app.use(router_main);
 app.use(router_fetchProfile);
 app.use(router_updateProfile);
+app.use(router_fetchShop);
 
 app.listen(3001, () => {
     console.log(`> Ready on http://localhost:3001`);
