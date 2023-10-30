@@ -1,11 +1,13 @@
 const Navigationbar = () => {
     return(
         <>
-        <div className="nav">
-            <div className="sadas">
-                <div className="row">
-                    <div className="col-md-12" >
-                        <h2 style={{backgroundColor: "lightblue"}}>navigation bar</h2>
+        <div className="sticky top-0 ">
+            <div className="container mx-auto">
+                <div className="">
+                    <div className="grid grid-cols-3" >
+                        <div className="col-span-2">navigation bar</div>
+                        <div className=""><a href="/profile">profile</a></div>
+                        
                     </div>
                 </div>
                 <div className="row">

@@ -5,9 +5,13 @@ import Maintest from '../Components/Maincompo.js'
 function Main_page() {
   return (
    <>
+   <div className="test">
    <Nav_bar/>
    <Maintest/>
-   <a href="/profile">profile</a>
+   <div className="h-48 ">asdas</div>
+   </div>
+   
+   
    
    </>
   )

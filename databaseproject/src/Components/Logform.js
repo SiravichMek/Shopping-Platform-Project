@@ -2,7 +2,7 @@ import React, { useEffect, useState } from 'react';
 import axios from 'axios';
 import Swal from 'sweetalert2'
 //make website can scroll
-document.body.style.overflow = "hidden"
+
 
 const apiUrl = 'http://localhost:3001/api/login'; 
 
@@ -53,10 +53,9 @@ const LoginForm = () => {
 
   return (
     <>
-        <div className="container mx-auto block pt-32 ">
-            <div className="grid-rows-3 grid grid-cols-3 ">
-            <div>
-            </div>
+        <div className="container h-full w-max mx-auto mt-24">
+            <div className="grid-rows-1">
+            <div className="grid-cols-1">
             <div className="flex min-h-full flex-1 flex-col justify-center px-6 py-12 lg:px-8 shadow-2xl rounded-3xl">
           <div className="sm:mx-auto sm:w-full sm:max-w-sm ">
             <img
@@ -132,6 +131,8 @@ const LoginForm = () => {
             </p>
           </div>
         </div>
+            </div>
+            
             </div>
         </div>
       </>
