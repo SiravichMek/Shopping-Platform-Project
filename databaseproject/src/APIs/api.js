@@ -15,6 +15,7 @@ import router_addProduct from "./addProduct.js";
 import { router_fetcchProduct } from "./editProduct.js";
 import { router_editProduct } from "./editProduct.js";
 import { router_fetchPreviousShop } from "./shopEdit.js";
+import router_deleteProduct from "./deleteProduct.js";
 
 const app = express();
 app.use(bodyParser.json());
@@ -33,6 +34,7 @@ app.use(router_addProduct);
 app.use(router_fetcchProduct);
 app.use(router_editProduct);
 app.use(router_fetchPreviousShop);
+app.use(router_deleteProduct);
 
 app.listen(3001, () => {
     console.log(`> Ready on http://localhost:3001`);

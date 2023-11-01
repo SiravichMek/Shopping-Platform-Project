@@ -9,8 +9,6 @@ function Main_page() {
    <Nav_bar/>
    <Maintest/>
    
-   <div className="h-48 ">asdas</div>
-   
    </div>
    </>
   )

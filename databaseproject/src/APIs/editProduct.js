@@ -5,7 +5,7 @@ import createConnection from './connect.js';
 const router_editProduct = express.Router();
 const router_fetcchProduct = express.Router();
 
-router_fetcchProduct.post('/api/fetchProfile', async (req, res) => {
+router_fetcchProduct.post('/api/fetchProduct', async (req, res) => {
     const { Username, Password } = req.body;
     const shopid = await getShopID(Username, Password);
     const query = 'SELECT * FROM Products WHERE ShopID = ?';
