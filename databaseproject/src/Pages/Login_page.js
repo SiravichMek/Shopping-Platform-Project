@@ -1,6 +1,6 @@
 import React from 'react';
 
-import Loginform_coms from'../Components/Loginform.coms.js';
+import Loginform_coms from'../Components/Loginform_coms.js';
 function Login_page(){
   return (
     <>

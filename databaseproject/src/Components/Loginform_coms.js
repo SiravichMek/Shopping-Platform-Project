@@ -33,9 +33,7 @@ const LoginForm = () => {
        }
       
     } catch (error) {
-      // Handle error
       console.error('Error fetching data:', error);
-      // alert("Login failed. Please check your credentials and try again.");
       Swal.fire({
         icon: 'error',
         title: 'Login failed.',

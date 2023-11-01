@@ -9,6 +9,7 @@ import Signup from "./Pages/Signup_page.js";
 import Editshop from "./Pages/Editshop_page.js";
 import Profile from "./Pages/Profile_page.js";
 import Editprofile from "./Pages/Editprofile_page.js";
+import Manageshop from "./Pages/Manageshop_page.js";
 
 
 
@@ -28,6 +29,7 @@ function App() {
       <Route path="/profile" element={<Profile/>}/>
       <Route path="/editshop" element={<Editshop/>}/>
       <Route path="/editprofile" element={<Editprofile/>}/>
+      <Route path="/manageshop" element={<Manageshop/>}/>
 
       
       {/* Redirect page to 404 when url out of our url lists */}

@@ -9,7 +9,8 @@ function Profile_page(){
         <a href="/editprofile">edit profile</a>
         <br/>
         <br/><br/><br/><br/><br/><br/>
-        <a href="/cs">Create shop</a>
+        <a href="/editshop">Create shop</a>
+        
         <br/>
         </>
     )

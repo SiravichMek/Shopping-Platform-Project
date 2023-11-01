@@ -12,7 +12,7 @@ router_fetchShop.post('/api/fetchShop', async (req, res) => {
 
   try {
     const shopResults = await db.query(query, values);
-    console.log(shopResults[0])
+    //console.log(shopResults[0])
     // Call the function to fetch shop products 
     const shopResult = await fetchShopProduct(Username, Password);
     const data ={
@@ -20,6 +20,7 @@ router_fetchShop.post('/api/fetchShop', async (req, res) => {
         productdata: shopResult
     }
     res.status(200).json({ data: data });
+    console.log(data)
   } catch (error) {
     console.error('Database Error:', error);
     res.status(500).json({ error: 'Occurred some conflict with the retrieving process' });
@@ -34,7 +35,7 @@ const fetchShopProduct = async (Username, Password) => {
 
   try {
     const productResults = await db.query(query, values);
-    console.log('Product Data:', productResults[0]);
+   //console.log('Product Data:', productResults[0]);
 
     // Send the second response from the function
     return  productResults[0];

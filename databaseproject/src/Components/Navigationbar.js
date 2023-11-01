@@ -6,7 +6,7 @@ const Navigationbar = () => {
                 <div className="">
                     <div className="grid grid-cols-3" >
                         <div className="col-span-2">navigation bar</div>
-                        <div className=""><a href="/profile">profile</a></div>
+                        <div className=""><a href="/profile">User profile</a><br/><a href="/manageshop">Shop profile</a></div>
                         
                     </div>
                 </div>
