@@ -85,7 +85,7 @@ const Editproform = () => {
   return (
     <>
       <h1>Profile Page</h1>
-      <div className="container">
+      <div className="container ">
         <div className="row-md-4">
           <div className="col-md-12">Profile Information</div>
 

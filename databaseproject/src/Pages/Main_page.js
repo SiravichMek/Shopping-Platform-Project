@@ -1,6 +1,6 @@
 import React from 'react'
 import Nav_bar from '../Components/Navigationbar.js'
-import Maintest from '../Components/Maincompo.js'
+import Maintest from '../Components/Mainpageproduct.coms.js'
 
 function Main_page() {
   return (

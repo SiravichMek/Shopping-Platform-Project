@@ -1,21 +1,29 @@
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import axios from 'axios';
 
-const apiUrl = 'http://localhost:3001/api/shop'; 
+const apiUrl1 = 'http://localhost:3001/api/fetchPreviousShop'; 
+const apiUrl2 = 'http://localhost:3001/api/shop'; 
 
-const SignupForm = () => {
+const Createshop = () => {
+  const [responseData, setResponseData] = useState([]);
   const [shopname, setShopname] = useState('');
   const [description, setDescription] = useState('');
 
-const data_body = {
+  const data_body1 = {
     Username: sessionStorage.getItem('Username'),
     Password: sessionStorage.getItem('Password'),
-  Shopname: shopname,
-  Description: description,
+  };
+
+const data_body2 = {
+    Username: sessionStorage.getItem('Username'),
+    Password: sessionStorage.getItem('Password'),
+    Shopname: shopname,
+    Description: description,
 }
-const createShop = async () => {
+
+const UpdateShopData = async () => {
   try {
-    const response = await axios.post(apiUrl, data_body);
+    const response = await axios.post(apiUrl2, data_body2);
     console.log('API Response:', response.data);
     if (shopname !== '' && description !== '') {
         alert("UPdate complete");
@@ -27,11 +35,31 @@ const createShop = async () => {
   }
 };
 
+useEffect(() => {
+  const FetchShopData = async () => {
+    try {
+      const response = await axios.post(apiUrl1, data_body1);
+      setResponseData(response.data.data);
+    } catch (error) {
+      console.error('Error fetching data:', error);
+    }
+  };
+  FetchShopData();
+}, []);
+
 const handleSubmit = (event) => {
   event.preventDefault();
-  createShop();
+  UpdateShopData();
   
 };
+
+useEffect(() => {
+  if (responseData.length > 0 ) {
+    const shops = responseData[0];
+    setShopname(shops.Shopname);
+    setDescription(shops.Description);
+  }
+}, [responseData]);
 
   return (
     <div className="nav">
@@ -63,4 +91,4 @@ const handleSubmit = (event) => {
   );
 };
 
-export default SignupForm;
+export default Createshop;

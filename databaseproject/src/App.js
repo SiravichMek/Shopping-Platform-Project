@@ -6,9 +6,10 @@ import './Styles/App.css';
 import Login from "./Pages/Login_page.js";
 import Main from "./Pages/Main_page.js";
 import Signup from "./Pages/Signup_page.js";
-import Createshop from "./Pages/Createshop_page.js";
+import Editshop from "./Pages/Editshop_page.js";
 import Profile from "./Pages/Profile_page.js";
-import Editprofile from "./Pages/Editpro.js";
+import Editprofile from "./Pages/Editprofile_page.js";
+
 
 
 
@@ -25,8 +26,9 @@ function App() {
       <Route path="/main" element={<Main />} />
       <Route path="/signup" element={<Signup />} />
       <Route path="/profile" element={<Profile/>}/>
-      <Route path="/cs" element={<Createshop/>}/>
+      <Route path="/editshop" element={<Editshop/>}/>
       <Route path="/editprofile" element={<Editprofile/>}/>
+
       
       {/* Redirect page to 404 when url out of our url lists */}
       <Route path="/404" element={<Navigate to="/NotFoundPage" />} />

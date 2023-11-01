@@ -53,8 +53,8 @@ const LoginForm = () => {
 
   return (
     <>
-        <div className="container h-full w-max mx-auto mt-24">
-            <div className="grid-rows-1">
+        <div className="container h-full w-max mx-auto mt-24 ">
+            <div className="grid-rows-1 ">
             <div className="grid-cols-1">
             <div className="flex min-h-full flex-1 flex-col justify-center px-6 py-12 lg:px-8 shadow-2xl rounded-3xl">
           <div className="sm:mx-auto sm:w-full sm:max-w-sm ">

@@ -33,7 +33,7 @@ const createUser = async () => {
             showConfirmButton: false,
             timer: 1000
           })
-          setTimeout(() => {window.location.href = '/main';}, 1500);
+          setTimeout(() => {window.location.href = '/login';}, 1500);
       } 
     }
   } catch (error) {

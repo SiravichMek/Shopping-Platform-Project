@@ -1,10 +1,10 @@
 import React from 'react';
 
-import Createshop_coms from'../Components/createshopform.js';
+import Editshop from'../Components/Editshop_coms.js';
 function Createshop_page(){
   return (
     <>
-    <Createshop_coms/>
+    <Editshop/>
     </>
   )
 };
