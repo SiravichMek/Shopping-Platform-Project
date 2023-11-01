@@ -7,8 +7,6 @@ const apiUrl = 'http://localhost:3001/api/main';
 
 const Maincompo = () => {
     const [responseData, setResponseData] = useState([]);
-    const [imageData, setImageData] = useState(null);
-    const [error, setError] = useState(null);
 
     useEffect(() => {
         const getProducts = async () => {
