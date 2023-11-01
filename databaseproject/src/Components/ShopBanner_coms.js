@@ -61,6 +61,11 @@ const ShopBanner_coms = () => {
                 <h3 className=''>{products.Name}</h3>
                 <p className=''>{products.Cost}</p>
                 <p className=''>{products.Description}</p>
+                <button id={products.ProductID}><a >Edit</a></button>
+                <br></br>
+                <button id={products.ProductID}><a >Delete</a></button>
+                <br></br>
+                <br></br>
                 </div>
               </div>
               ))}

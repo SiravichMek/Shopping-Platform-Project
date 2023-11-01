@@ -27,7 +27,7 @@ const UpdateShopData = async () => {
     console.log('API Response:', response.data);
     if (shopname !== '' && description !== '') {
         alert("UPdate complete");
-        window.location.href = '/profile';
+        window.location.href = '/manageshop';
     }
   } catch (error) {
     console.error('API Error:', error.response.data);

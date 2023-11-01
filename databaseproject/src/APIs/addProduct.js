@@ -9,8 +9,8 @@ router_addProduct.post('/api/addProduct', async (req, res) => {
     try {
       const { Username, Password, Name, Description, Cost, Category } = req.body;
       const shopID = await getShopID(Username,Password);
-      console.log(shopID[0])
-      if(shopID[0]==undefined){
+      
+      if(shopID==undefined){
         res.status(500).json({ error: 'Not have related shop ID' });
         return
       }
