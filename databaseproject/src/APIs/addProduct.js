@@ -5,12 +5,18 @@ import createConnection from './connect.js';
 const router_addProduct = express.Router();
 
 router_addProduct.post('/api/addProduct', async (req, res) => {
-    const { Username, Password, Name, Description, Cost, Category } = req.body;
-    const shopID = await getShopID(Username,Password);
-    const query = "INSERT INTO products (Name, Description, Cost, ShopID ,Category) VALUES (?, ?, ?, ?, ?) ";
-    const values = [Name,Description,Cost,shopID,Category];
-    const db = await createConnection();
+   
     try {
+      const { Username, Password, Name, Description, Cost, Category } = req.body;
+      const shopID = await getShopID(Username,Password);
+      console.log(shopID[0])
+      if(shopID[0]==undefined){
+        res.status(500).json({ error: 'Not have related shop ID' });
+        return
+      }
+      const query = "INSERT INTO products (Name, Description, Cost, ShopID ,Category) VALUES (?, ?, ?, ?, ?) ";
+      const values = [Name,Description,Cost,shopID,Category];
+      const db = await createConnection();
       const results = await db.query(query, values);
       res.status(200).json({ message: "Add new product complete" });
       

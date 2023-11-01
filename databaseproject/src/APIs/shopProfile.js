@@ -14,10 +14,10 @@ router_fetchShop.post('/api/fetchShop', async (req, res) => {
     const shopResults = await db.query(query, values);
     //console.log(shopResults[0])
     // Call the function to fetch shop products 
-    const shopResult = await fetchShopProduct(Username, Password);
+    const productResult = await fetchShopProduct(Username, Password);
     const data ={
         shopdata: shopResults[0],
-        productdata: shopResult
+        productdata: productResult
     }
     res.status(200).json({ data: data });
     console.log(data)
