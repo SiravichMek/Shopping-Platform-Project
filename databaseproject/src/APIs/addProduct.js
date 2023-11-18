@@ -1,7 +1,6 @@
   
 import express from 'express';
 import createConnection from './connect.js';
-import cloudinary from './cloudinary.js';
 
 const router_addProduct = express.Router();
 
@@ -43,19 +42,6 @@ const getShopID = async (Username,Password) => {
     }
   };
   
-  const uploadPic = async (img) => {
-    try {
-      const result = await cloudinary.uploader.upload(img, {
-        upload_preset: 'ml_default'
-
-      });
-      const publicId = result.public_id;
-      return publicId;
-    } catch (error) {
-      console.error('Database Error:', error);
-      res.status(500).json({ error: 'Occur some conflict with uploading process' });
-    }
-  };
   
 
 export default router_addProduct;

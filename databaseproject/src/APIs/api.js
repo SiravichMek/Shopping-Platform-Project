@@ -8,7 +8,7 @@ import router_regist from "./regist.js";
 import router_profile from "./profile.js";
 import { router_shop } from "./shopEdit.js";
 import {router_main,router_main_cart, router_main_image} from "./main.js"
-import { router_fetchProfile, router_test } from "./editProfile.js";
+import { router_fetchProfile } from "./editProfile.js";
 import { router_updateProfile } from "./editProfile.js";
 import router_fetchShop from "./shopProfile.js";
 import router_addProduct from "./addProduct.js";
@@ -54,7 +54,6 @@ app.use(router_submitOrder);
 app.use(router_getReceipt);
 app.use(router_history);
 app.use(router_review);
-app.use(router_test);
 app.use(router_main_image);
 app.use(router_admin_main);
 app.use(router_admin_review);

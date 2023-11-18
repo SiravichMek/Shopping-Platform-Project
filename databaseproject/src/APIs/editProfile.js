@@ -1,7 +1,6 @@
   
 import express from 'express';
 import createConnection from './connect.js';
-import cloudinary from './cloudinary.js';
 
 const router_fetchProfile = express.Router();
 const router_updateProfile = express.Router();
@@ -74,27 +73,8 @@ const getUserID = async (Username, Password) => {
   }
 };
 
- // get upload picture from username and password
- 
- const router_test = express.Router();
- router_test.post('/api/test', async (req, res) => {
-  
-    try {
-      const result = await cloudinary.uploader.upload(req.body.img, {
-        upload_preset: 'ml_default'
-
-      });
-      const publicId = result.public_id;
-      res.status(200).json({ data_publicID: publicId  });
-    } catch (error) {
-      console.error('Database Error:', error);
-      res.status(500).json({ error: 'Occur some conflict with uploading process' });
-    }
-   
-});
 
 export 
 { router_fetchProfile,
   router_updateProfile,
-  router_test
 };
