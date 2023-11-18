@@ -82,10 +82,9 @@ const Maincompo = () => {
                     <Menu.Button className="flex rounded-full">
                      
           
-                    <p className="duration-300 flex mb-5 text-xl font-medium px-2 py-1 text-black border-2 border-black rounded-xl shadow-2xl hover:text-white hover:bg-black">
-                      <AdjustmentsHorizontalIcon className="h-7 w-auto text-black hover:text-white" />
-                        
-                    </p>                    
+                
+                      <AdjustmentsHorizontalIcon className="duration-300 flex mb-5 text-xl font-medium px-2 py-1 text-black border-2 border-black rounded-xl shadow-2xl hover:text-white hover:bg-black h-[2.75rem] w-auto" />
+                                          
                   </Menu.Button>
                   </div>
                   <Transition
@@ -218,7 +217,7 @@ const Maincompo = () => {
               Close
             </button>
             <button
-              className="border-green-600 border-2 text-black hover:bg-green-600 hover:text-white font-bold uppercase text-sm px-6 py-3 rounded shadow hover:shadow-lg outline-none focus:outline-none mr-1 mb-1 ease-linear transition-all duration-150"
+              className="duration-200 border-green-600 border-2 text-black hover:bg-green-600 hover:text-white font-bold uppercase text-sm px-6 py-3 rounded shadow hover:shadow-lg outline-none focus:outline-none mr-1 mb-1 ease-linear transition-all "
               type="button"
               onClick={(event) => {
                 Addtoproduct(event, selectedProduct.ProductID);
