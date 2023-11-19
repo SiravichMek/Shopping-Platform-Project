@@ -11,7 +11,6 @@ const Addproducts_coms = () => {
     const [cost, setCost] = useState('');
     const [category, setCategory] = useState('');
     const [productimage, setProductimage] = useState('');
-    const [productimage1, setProductimage1] = useState('');
 
     const data_body = {
         Username: sessionStorage.getItem('Username'),
@@ -53,18 +52,6 @@ const Addproducts_coms = () => {
         event.preventDefault();
         createProduct();
         
-      };
-
-      const handleProductImageUpload = (e) => {
-        const file = e.target.files[0];
-      
-        if (file) {
-            setProductimage(URL.createObjectURL(file));
-            console.log('test', productimage);
-      
-        } else {
-          setProductimage('');
-        }
       };
 
   return (

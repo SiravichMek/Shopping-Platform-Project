@@ -10,15 +10,15 @@ router_history.get('/api/history/:Username/:Password', async (req, res) => {
     const {Username,Password} = req.params;
     
     try {
-        const cartid = await getCartID( Username, Password);
-      const query = 'SELECT * FROM `order` WHERE CartID = ?';
+      const cartid = await getCartID(Username, Password);
+      const query = 'SELECT * FROM `order` WHERE CartID = ? ORDER BY orderID DESC';
       const values = [cartid];
-      const results = await db.query(query,values);
+      const results = await db.query(query, values);
       res.status(200).json({ data: results[0] });
-      console.log(results[0])
+      console.log(results[0]);
     } catch (error) {
       console.error('Database Error:', error);
-      res.status(500).json({ error: 'Occur some conflict with retrieving process' });
+      res.status(500).json({ error: 'An error occurred while retrieving data.' });
     }
    
 });
