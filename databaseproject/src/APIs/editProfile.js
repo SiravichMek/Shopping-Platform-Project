@@ -36,10 +36,10 @@ router_fetchProfile.post('/api/fetchProfile', async (req, res) => {
 });
 
 router_updateProfile.post('/api/updateProfile', async (req, res) => {
-    const {Name, newUsername, newPassword,  Address, Tel, Username, Password } = req.body;
+    const {Name, newUsername, newPassword,  Address, Tel, Username, Password, Image} = req.body;
     const userID = await getUserID(Username,Password);
-    const query = 'UPDATE  users set Name = ?, Username = ?, Password = AES_ENCRYPT(?, SHA1(?)), Address = ?, Tel =?  WHERE UserID = ?';
-    const values = [Name ,newUsername, newPassword, 'Password',Address, Tel, userID];
+    const query = 'UPDATE  users set Name = ?, Username = ?, Password = AES_ENCRYPT(?, SHA1(?)), Address = ?, Tel =?, Image = ? WHERE UserID = ?';
+    const values = [Name ,newUsername, newPassword, 'Password',Address, Tel, Image, userID];
     const query1 = 'select Username ,Password from users where Username = ?';
     const values1 = [newUsername];
     const db = await createConnection();
@@ -49,7 +49,7 @@ router_updateProfile.post('/api/updateProfile', async (req, res) => {
         const results1 = await db.query(query1, values1);
         const newdata = {
           'Username' : results1[0][0].Username,
-          'Password' : results1[0][0].Password.toString('hex')
+          'Password' : results1[0][0].Password.toString('hex'),
         }
         res.status(200).json({ data: newdata});
       } catch (error) {
