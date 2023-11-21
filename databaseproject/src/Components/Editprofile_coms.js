@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import axios from 'axios';
-import { UserIcon, LockClosedIcon, IdentificationIcon, HomeIcon, PhoneIcon, ArrowLeftIcon} from '@heroicons/react/24/solid'
+import { UserIcon, LockClosedIcon, IdentificationIcon, HomeIcon, PhoneIcon, ArrowLeftIcon, PhotoIcon} from '@heroicons/react/24/solid'
 import Swal from 'sweetalert2'
 const apiUrl1 = 'http://localhost:3001/api/fetchProfile';
 const apiUrl2 = 'http://localhost:3001/api/updateProfile';
@@ -116,6 +116,7 @@ const Editproform = () => {
     }
   };
   
+  
 
   return (
     <>
@@ -153,6 +154,11 @@ const Editproform = () => {
                           onChange={handleImageChange}
                           className="pl-9 block w-full rounded-md border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6"
                         />
+                        <div class="absolute inset-y-0 left-0 pl-3  
+                          flex items-center pointer-events-none 
+                          "> 
+                          <PhotoIcon className=" h-5 w-5 text-black"/>
+                        </div>
                         <div className="absolute inset-y-0 left-0 pl-3 flex items-center pointer-events-none">
                           {/* Render your IdentificationIcon or any other component here */}
                         </div>
