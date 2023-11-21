@@ -50,9 +50,9 @@ router_fetcchProduct.post('/api/fetchProduct', async (req, res) => {
 
 router_editProduct.put('/api/editProduct/:id', async (req, res) => {
   const id =  req.params.id;  
-  const { Name, Description, Cost, Category } = req.body;
-    const query = "UPDATE products SET Name =? ,Description =? ,Cost =? ,Category =? WHERE ProductID = ?";
-    const values = [Name,Description,Cost,Category,id];
+  const { Name, Description, Cost, Category,Picture } = req.body;
+    const query = "UPDATE products SET Name =? ,Description =? ,Cost =? ,Category =?,Picture=? WHERE ProductID = ?";
+    const values = [Name,Description,Cost,Category,Picture,id];
     const db = await createConnection();
     try {
       const results = await db.query(query, values);

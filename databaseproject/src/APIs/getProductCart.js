@@ -8,7 +8,7 @@ const router_getProductCart = express.Router();
 router_getProductCart.post('/api/getProductCart', async (req, res) => {
     const {Username,Password} = req.body;
     const cartid = await getCartID(Username,Password);
-    const query = "SELECT Products.ProductID, Products.Name, Products.Description, Products.Cost, Products.Category, Quantity FROM cart_product JOIN Products ON cart_product.ProductID = Products.ProductID WHERE cart_product.CartID = ? ";
+    const query = "SELECT Products.ProductID, Products.Name, Products.Description, Products.Cost, Products.Category, Products.Picture ,Quantity FROM cart_product JOIN Products ON cart_product.ProductID = Products.ProductID WHERE cart_product.CartID = ? ";
     const values = [cartid];
     const db = await createConnection();
     try {

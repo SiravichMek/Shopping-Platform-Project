@@ -19,7 +19,7 @@ router_submitOrder.post('/api/submitOrder', async (req, res) => {
       }
       
       const db = await createConnection();
-      const query0 = "SELECT Products.ProductID, Products.Name, Products.Description, Products.Cost, Products.Category, Quantity FROM cart_product JOIN Products ON cart_product.ProductID = Products.ProductID WHERE cart_product.CartID = ? ";
+      const query0 = "SELECT Products.ProductID, Products.Name, Products.Description, Products.Cost, Products.Category, Products.Picture ,Quantity FROM cart_product JOIN Products ON cart_product.ProductID = Products.ProductID WHERE cart_product.CartID = ? ";
     const values0 = [cartID];  
     const results0 = await db.query(query0, values0);
     const results0JSON = JSON.stringify(results0[0]);  

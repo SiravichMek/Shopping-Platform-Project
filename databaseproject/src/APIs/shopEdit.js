@@ -7,8 +7,8 @@ const router_fetchPreviousShop = express.Router();
 router_shop.post('/api/shop', async (req, res) => {
     const { Username, Password, Shopname, Description,Image } = req.body;
     const shopID = await getShopID(Username,Password);
-    const query = "UPDATE shops SET Shopname = ?, Description = ? WHERE ShopID = ? ";
-    const values = [Shopname,Description,shopID];
+    const query = "UPDATE shops SET Shopname = ?, Description = ?, Image = ? WHERE ShopID = ? ";
+    const values = [Shopname,Description,Image,shopID];
     const query2 = "SELECT * FROM shops WHERE ShopID = ? ";
   const db = await createConnection();
   

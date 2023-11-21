@@ -25,6 +25,7 @@ router_profile.post('/api/profile', async (req, res) => {
           Tel: results[0][0].Tel,
           Address: results[0][0].Address,
           Password: results[0][0].Password.toString('utf8'),
+          Image:results[0][0].Image
          
         };
         
