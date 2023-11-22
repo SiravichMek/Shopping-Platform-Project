@@ -125,7 +125,21 @@ const Addproducts_coms = () => {
                   type="text"
                   autoComplete="name"
  		              value={productname}
-          	      onChange={(e) => setProductname(e.target.value)}
+                  onChange={(e) => {
+                    const productnameInput = e.target.value;
+                    const regex = /^[a-zA-Z0-9]*$/; // Regex allowing only letters and numbers
+
+                    if (regex.test(productnameInput)) {
+                      setProductname(productnameInput);
+                    } else {
+                      
+                      Swal.fire({
+                        title: "Warning",
+                        text: "Special characters are not allowed.",
+                        icon: "warning"
+                      });
+                    }
+                  }}
                   required
                   className="block w-full rounded-md border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6 pl-2"
                 />
@@ -143,7 +157,21 @@ const Addproducts_coms = () => {
                     type="text"
                     autoComplete="text"
                     value={description}
-                    onChange={(e) => setDescription(e.target.value)}
+                    onChange={(e) => {
+                      const descriptionInput = e.target.value;
+                      const regex = /^[a-zA-Z0-9]*$/; // Regex allowing only letters and numbers
+  
+                      if (regex.test(descriptionInput)) {
+                        setDescription(descriptionInput);
+                      } else {
+                        
+                        Swal.fire({
+                          title: "Warning",
+                          text: "Special characters are not allowed.",
+                          icon: "warning"
+                        });
+                      }
+                    }}
                     required
                     className="block w-full rounded-md border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6 pl-2 "
                   />
@@ -161,7 +189,10 @@ const Addproducts_coms = () => {
                   type="number"
                   autoComplete="tel"
                   value={cost}
-                  onChange={(e) => setCost(e.target.value)}
+                  onChange={(e) => {
+                    const inputValue = e.target.value.slice(0, 10); // Limit input to 10 characters
+                    setCost(inputValue); // Update the 'cost' state with the limited value
+                  }}
                   required
                   className="block w-full rounded-md border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-indigo-600 focus:ring-inset sm:text-sm sm:leading-6 pl-2"
                 />

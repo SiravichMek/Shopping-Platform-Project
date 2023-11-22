@@ -79,7 +79,21 @@ const Review_coms = () => {
                     placeholder="Enter a title"
                     autoComplete="user"
                     value={title}
-                    onChange={(e) => setTitle(e.target.value)}
+                    onChange={(e) => {
+                      const TitleInput = e.target.value;
+                      const regex = /^[a-zA-Z0-9 ]*$/; // Regex allowing only letters and numbers
+  
+                      if (regex.test(TitleInput)) {
+                        setTitle(TitleInput);
+                      } else {
+                        
+                        Swal.fire({
+                          title: "Warning",
+                          text: "Special characters are not allowed.",
+                          icon: "warning"
+                        });
+                      }
+                    }}
                     required
                     className="block w-full rounded-md border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6"
                     />
@@ -99,7 +113,21 @@ const Review_coms = () => {
                           type="text"
                           placeholder="Enter a description"
                           value={description}
-                          onChange={(e) => setDescription(e.target.value)}
+                          onChange={(e) => {
+                            const DescriptionInput = e.target.value;
+                            const regex = /^[a-zA-Z0-9 ]*$/; // Regex allowing only letters and numbers
+        
+                            if (regex.test(DescriptionInput)) {
+                              setDescription(DescriptionInput);
+                            } else {
+                              
+                              Swal.fire({
+                                title: "Warning",
+                                text: "Special characters are not allowed.",
+                                icon: "warning"
+                              });
+                            }
+                          }}
                           required
                           className="block w-full rounded-md border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6"
                         />
