@@ -127,7 +127,7 @@ const Addproducts_coms = () => {
  		              value={productname}
                   onChange={(e) => {
                     const productnameInput = e.target.value;
-                    const regex = /^[a-zA-Z0-9]*$/; // Regex allowing only letters and numbers
+                    const regex = /^[a-zA-Z0-9 .]*$/; // Regex allowing only letters and numbers
 
                     if (regex.test(productnameInput)) {
                       setProductname(productnameInput);
@@ -159,7 +159,7 @@ const Addproducts_coms = () => {
                     value={description}
                     onChange={(e) => {
                       const descriptionInput = e.target.value;
-                      const regex = /^[a-zA-Z0-9]*$/; // Regex allowing only letters and numbers
+                      const regex = /^[a-zA-Z0-9 .]*$/; // Regex allowing only letters and numbers
   
                       if (regex.test(descriptionInput)) {
                         setDescription(descriptionInput);

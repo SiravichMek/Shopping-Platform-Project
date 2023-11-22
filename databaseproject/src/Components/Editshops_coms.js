@@ -147,7 +147,7 @@ useEffect(() => {
                         value={shopname}
                         onChange={(e) => {
                           const ShopnameInput = e.target.value;
-                          const regex = /^[a-zA-Z0-9]*$/; // Regex allowing only letters and numbers
+                          const regex = /^[a-zA-Z0-9 .]*$/; // Regex allowing only letters and numbers
     
                           if (regex.test(ShopnameInput)) {
                             setShopname(ShopnameInput);
@@ -179,7 +179,7 @@ useEffect(() => {
                         value={description}
                         onChange={(e) => {
                         const descriptionInput = e.target.value;
-                          const regex = /^[a-zA-Z0-9]*$/; // Regex allowing only letters and numbers
+                        const regex = /^[a-zA-Z0-9 .]*$/; // Regex allowing only letters and numbers
     
                           if (regex.test(descriptionInput)) {
                             setDescription(descriptionInput);

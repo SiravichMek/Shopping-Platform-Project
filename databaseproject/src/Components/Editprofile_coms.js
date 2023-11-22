@@ -187,7 +187,7 @@ const Editproform = () => {
                           value={name}
                           onChange={(e) => {
                             const nameInput = e.target.value;
-                            const regex = /^[a-zA-Z0-9]*$/;
+                            const regex = /^[a-zA-Z0-9 .]*$/; // Regex allowing only letters and numbers
       
                             if (regex.test(nameInput)) {
                               setName(nameInput);
@@ -225,8 +225,7 @@ const Editproform = () => {
                     value={user}
                     onChange={(e) => {
                       const userInput = e.target.value;
-                      const regex = /^[a-zA-Z0-9]*$/;
-
+                      const regex = /^[a-zA-Z0-9 .]*$/; // Regex allowing only letters and numbers
                       if (regex.test(userInput)) {
                         setUser(userInput);
                       } else {
@@ -264,8 +263,7 @@ const Editproform = () => {
                           value={password}
                           onChange={(e) => {
                             const passInput = e.target.value;
-                            const regex = /^[a-zA-Z0-9]*$/;
-      
+                            const regex = /^[a-zA-Z0-9 .]*$/; // Regex allowing only letters and numbers
                             if (regex.test(passInput)) {
                               setPassword(passInput);
                             } else {
@@ -301,7 +299,7 @@ const Editproform = () => {
                   value={address}
                   onChange={(e) => {
                     const adressInput = e.target.value;
-                    const regex = /^[a-zA-Z0-9, /]*$/;
+                    const regex = /^[a-zA-Z0-9 ./]*$/; // Regex allowing only letters and numbers
 
                     if (regex.test(adressInput)) {
                       setAddress(adressInput);

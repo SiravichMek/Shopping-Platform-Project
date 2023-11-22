@@ -165,7 +165,7 @@ const Editproduct_page = () => {
                           placeholder="Enter a name"
                           onChange={(e) => {
                             const ProductnameInput = e.target.value;
-                            const regex = /^[a-zA-Z0-9]*$/; // Regex allowing only letters and numbers
+                            const regex = /^[a-zA-Z0-9 .]*$/; // Regex allowing only letters and numbers
         
                             if (regex.test(ProductnameInput)) {
                               setProductname(ProductnameInput);
@@ -196,7 +196,7 @@ const Editproduct_page = () => {
                     value={description}
                     onChange={(e) => {
                       const descriptionInput = e.target.value;
-                      const regex = /^[a-zA-Z0-9]*$/; // Regex allowing only letters and numbers
+                      const regex = /^[a-zA-Z0-9 .]*$/; // Regex allowing only letters and numbers
   
                       if (regex.test(descriptionInput)) {
                         setDescription(descriptionInput);
